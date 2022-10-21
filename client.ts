@@ -1,5 +1,5 @@
-import { WebLNProvider } from './provider';
-import { MissingProviderError } from './errors';
+import { WebLNProvider } from './provider.ts';
+import { MissingProviderError } from './errors.ts';
 
 /**
  * Everything needed to get and set providers on the client.

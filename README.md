@@ -3,6 +3,10 @@
 This library provides the spec and client libraries for WebLN, a way of
 interacting with a user's Lightning node via the browser.
 
+This version is built for use in Deno projects that use [Fresh](https://fresh.deno.dev).
+
+webln does not work server-side, so it's not that useful for deno.
+
 **Heads up: This spec is in early stages, and is subject to change.
 Join in the discussion in the issue queue, and please be mindful
 when building apps with it!**
@@ -15,33 +19,10 @@ If you'd like to contribute to the documentation, you can find it over at https:
 
 ## TL;DR Docs
 
-### Installation
-
-For use in node-built projects, install via npm or yarn:
-
-```bash
-npm install webln
-# OR #
-yarn add webln
-```
-
-If you don't have a build system, you can add the following script tag to your
-project which will add all functionality under the global `WebLN` namespace:
-```html
-<script
-  src="https://unpkg.com/webln@0.3.0/dist/webln.min.js"
-  integrity="sha384-g4CABMESGmsa44I6J+t/4fY3DYGpbl8EjqX4L8g6rmD0RLjVinenmzEDqSH3f1QV"
-  crossorigin="anonymous"
-></script>
-```
-<sup>Make sure you leave the integrity hash in to prevent possibly malicious JS</sup>
-
-### Client Library
-
 Apps that want to enable WebLN interactions can use the `requestProvider` function to grab a WebLN provider:
 
 ```ts
-import { requestProvider } from 'webln';
+import { requestProvider } from 'https://deno.land/x/webln';
 
 let webln;
 try {
